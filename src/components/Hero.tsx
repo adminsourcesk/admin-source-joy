@@ -54,7 +54,7 @@ const Hero = () => {
           </button>
           <button
             onClick={() => scrollTo('contact')}
-            className="px-6 py-3 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
+            className="px-6 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:opacity-90 transition-opacity"
           >
             {t('hero_contact')}
           </button>
