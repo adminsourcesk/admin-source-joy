@@ -24,11 +24,13 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col items-center text-center"
+            className="relative flex items-center justify-center text-center"
           >
-            <Mail className="w-8 h-8 text-primary mb-2" />
-            <p className="text-sm text-muted-foreground">{t('contact_email')}</p>
-            <p className="text-xl font-semibold">info@adminsource.sk</p>
+            <Mail className="w-8 h-8 text-primary absolute -left-12" />
+            <div>
+              <p className="text-sm text-muted-foreground">{t('contact_email')}</p>
+              <p className="text-xl font-semibold">info@adminsource.sk</p>
+            </div>
           </motion.a>
           <motion.a
             href="tel:+421XXXXXXXX"
@@ -37,11 +39,13 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col items-center text-center"
+            className="relative flex items-center justify-center text-center"
           >
-            <Phone className="w-8 h-8 text-primary mb-2" />
-            <p className="text-sm text-muted-foreground">{t('contact_phone')}</p>
-            <p className="text-xl font-semibold">+421 XXX XXX XXX</p>
+            <Phone className="w-8 h-8 text-primary absolute -left-12" />
+            <div>
+              <p className="text-sm text-muted-foreground">{t('contact_phone')}</p>
+              <p className="text-xl font-semibold">+421 XXX XXX XXX</p>
+            </div>
           </motion.a>
         </div>
       </div>
