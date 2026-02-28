@@ -1,5 +1,7 @@
 import { useLanguage } from '@/i18n/LanguageContext';
 import { Language } from '@/i18n/translations';
+import { useState, useRef, useEffect } from 'react';
+import { Globe } from 'lucide-react';
 
 const flags: Record<Language, string> = {
   sk: '🇸🇰',
@@ -10,23 +12,64 @@ const flags: Record<Language, string> = {
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
 
   return (
-    <div className="flex items-center gap-1">
-      {(Object.keys(flags) as Language[]).map((lang) => (
+    <>
+      {/* Inline buttons for wider screens */}
+      <div className="hidden sm:flex items-center gap-1">
+        {(Object.keys(flags) as Language[]).map((lang) => (
+          <button
+            key={lang}
+            onClick={() => setLanguage(lang)}
+            className={`px-2 py-1 rounded text-sm font-medium transition-colors ${
+              language === lang
+                ? 'bg-primary text-primary-foreground'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {flags[lang]} {lang.toUpperCase()}
+          </button>
+        ))}
+      </div>
+
+      {/* Dropdown for narrow screens */}
+      <div className="relative sm:hidden" ref={ref}>
         <button
-          key={lang}
-          onClick={() => setLanguage(lang)}
-          className={`px-2 py-1 rounded text-sm font-medium transition-colors ${
-            language === lang
-              ? 'bg-primary text-primary-foreground'
-              : 'text-muted-foreground hover:text-foreground'
-          }`}
+          onClick={() => setOpen(!open)}
+          className="flex items-center gap-1.5 px-2 py-1 rounded text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
         >
-          {flags[lang]} {lang.toUpperCase()}
+          <Globe className="w-4 h-4" />
+          {flags[language]} {language.toUpperCase()}
         </button>
-      ))}
-    </div>
+        {open && (
+          <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-lg shadow-lg py-1 min-w-[120px] z-50">
+            {(Object.keys(flags) as Language[]).map((lang) => (
+              <button
+                key={lang}
+                onClick={() => { setLanguage(lang); setOpen(false); }}
+                className={`w-full px-3 py-2 text-left text-sm flex items-center gap-2 transition-colors ${
+                  language === lang
+                    ? 'bg-primary/10 text-foreground font-medium'
+                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                }`}
+              >
+                {flags[lang]} {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
