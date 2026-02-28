@@ -26,7 +26,7 @@ const LanguageSwitcher = () => {
   return (
     <>
       {/* Inline buttons for wider screens */}
-      <div className="hidden sm:flex items-center gap-1">
+      <div className="hidden md:flex items-center gap-1">
         {(Object.keys(flags) as Language[]).map((lang) => (
           <button
             key={lang}
@@ -43,7 +43,7 @@ const LanguageSwitcher = () => {
       </div>
 
       {/* Dropdown for narrow screens */}
-      <div className="relative sm:hidden" ref={ref}>
+      <div className="relative md:hidden" ref={ref}>
         <button
           onClick={() => setOpen(!open)}
           className="flex items-center gap-1.5 px-2 py-1 rounded text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
