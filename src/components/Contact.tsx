@@ -12,6 +12,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 1 }}
           className="text-3xl md:text-4xl font-bold text-center mb-12"
         >
           {t('contact_title')}
@@ -23,6 +24,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 1 }}
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center text-center gap-1"
           >
@@ -35,7 +37,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            transition={{ duration: 1, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center text-center gap-1"
           >

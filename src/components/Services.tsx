@@ -44,6 +44,7 @@ const Services = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 1 }}
           className="text-3xl md:text-4xl font-bold text-center mb-4"
         >
           {t('services_title')}
@@ -75,7 +76,7 @@ const Services = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: ci * 0.1 }}
+              transition={{ duration: 1, delay: ci * 0.15 }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <motion.div
