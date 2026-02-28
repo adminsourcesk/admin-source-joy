@@ -6,47 +6,40 @@
 
 @layer base {
   :root {
-    --background: 220 20% 7%;
-    --foreground: 210 20% 92%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 210 20% 92%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 210 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 175 80% 50%;
-    --primary-foreground: 220 20% 7%;
+    --primary: 170 20% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 15% 15%;
-    --secondary-foreground: 210 20% 75%;
+    --secondary: 270 20% 70%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 13%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 270 10% 95%;
+    --muted-foreground: 0 0% 40%;
 
-    --accent: 175 80% 50%;
-    --accent-foreground: 220 20% 7%;
+    --accent: 170 20% 55%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 55%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 16%;
-    --input: 220 15% 16%;
-    --ring: 175 80% 50%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 170 20% 55%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 220 20% 5%;
-    --sidebar-foreground: 210 20% 70%;
-    --sidebar-primary: 175 80% 50%;
-    --sidebar-primary-foreground: 220 20% 7%;
-    --sidebar-accent: 220 15% 12%;
-    --sidebar-accent-foreground: 210 20% 92%;
-    --sidebar-border: 220 15% 12%;
-    --sidebar-ring: 175 80% 50%;
-
     --success: 150 60% 45%;
     --warning: 40 90% 55%;
+
+    --hero-overlay: 0 0% 10%;
 
     --font-sans: 'Space Grotesk', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
