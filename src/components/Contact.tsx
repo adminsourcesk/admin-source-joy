@@ -20,9 +20,10 @@ const Contact = () => {
         <div className="flex flex-col items-center gap-8">
           <motion.a
             href="mailto:info@adminsource.sk"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center text-center gap-1"
           >
@@ -32,10 +33,10 @@ const Contact = () => {
           </motion.a>
           <motion.a
             href="tel:+421XXXXXXXX"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            initial={{ opacity: 0, y: 30, scale: 0.9 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center text-center gap-1"
           >
