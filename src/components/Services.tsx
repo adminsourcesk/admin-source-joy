@@ -4,6 +4,25 @@ import { FileText, Database, Search } from 'lucide-react';
 import picture2 from '@/assets/picture2.jpg';
 import picture3 from '@/assets/picture3.jpg';
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 60 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] as const },
+  }),
+};
+
+const slideLeft = {
+  hidden: { opacity: 0, x: -80 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
+const slideRight = {
+  hidden: { opacity: 0, x: 80 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
+};
+
 const Services = () => {
   const { t } = useLanguage();
 
@@ -38,12 +57,14 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-24 px-6 bg-background">
+    <section id="services" className="py-24 px-6 bg-background overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={fadeUp}
+          custom={0}
           className="text-3xl md:text-4xl font-bold text-center mb-4"
         >
           {t('services_title')}
@@ -51,10 +72,10 @@ const Services = () => {
 
         <div className="grid grid-cols-2 gap-4 my-12 rounded-xl overflow-hidden max-w-4xl mx-auto">
           <motion.img
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideLeft}
             whileHover={{ scale: 1.05 }}
             src={picture2}
             alt="Modern office"
@@ -62,10 +83,10 @@ const Services = () => {
             loading="lazy"
           />
           <motion.img
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6 }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={slideRight}
             whileHover={{ scale: 1.05 }}
             src={picture3}
             alt="Workspace"
@@ -78,10 +99,11 @@ const Services = () => {
           {categories.map((cat, ci) => (
             <motion.div
               key={ci}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: ci * 0.1 }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeUp}
+              custom={0}
             >
               <div className="flex items-center gap-3 mb-6">
                 <motion.div
@@ -96,10 +118,11 @@ const Services = () => {
                 {cat.services.map((s, si) => (
                   <motion.div
                     key={si}
-                    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 0.4, delay: si * 0.1 }}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    variants={fadeUp}
+                    custom={si}
                     whileHover={{ y: -4, borderColor: 'hsl(270 35% 60% / 0.4)' }}
                     whileTap={{ scale: 0.98 }}
                     className="p-5 rounded-xl border border-border bg-card cursor-pointer shadow-sm hover:shadow-md transition-shadow"
