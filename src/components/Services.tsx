@@ -38,11 +38,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="relative py-24 px-6 bg-background overflow-hidden">
-      {/* Decorative background orb */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-secondary/5 blur-[150px] pointer-events-none" />
-
-      <div className="relative max-w-6xl mx-auto">
+    <section id="services" className="py-24 px-6 bg-background">
+      <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,26 +49,23 @@ const Services = () => {
           {t('services_title')}
         </motion.h2>
 
-        {/* Decorative image strip */}
-        <div className="grid grid-cols-2 gap-4 my-12 max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative group rounded-xl overflow-hidden"
-          >
-            <img src={picture2} alt="Modern office" className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative group rounded-xl overflow-hidden"
-          >
-            <img src={picture3} alt="Workspace" className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
-            <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </motion.div>
+        <div className="grid grid-cols-2 gap-4 my-12 rounded-xl overflow-hidden max-w-4xl mx-auto">
+          <motion.img
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            src={picture2}
+            alt="Modern office"
+            className="w-full h-48 object-cover rounded-lg cursor-pointer"
+            loading="lazy"
+          />
+          <motion.img
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            src={picture3}
+            alt="Workspace"
+            className="w-full h-48 object-cover rounded-lg cursor-pointer"
+            loading="lazy"
+          />
         </div>
 
         <div className="space-y-16">
@@ -84,26 +78,25 @@ const Services = () => {
               transition={{ delay: ci * 0.1 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center backdrop-blur-sm border border-secondary/20">
+                <motion.div
+                  whileHover={{ rotate: 10, scale: 1.1 }}
+                  className="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center cursor-pointer"
+                >
                   <cat.icon className="w-5 h-5 text-secondary" />
-                </div>
+                </motion.div>
                 <h3 className="text-xl font-semibold">{cat.title}</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 {cat.services.map((s, si) => (
                   <motion.div
                     key={si}
-                    whileHover={{ y: -4 }}
-                    transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                    className="group p-5 rounded-xl border border-border bg-card/80 backdrop-blur-sm hover:shadow-lg hover:shadow-secondary/10 hover:border-secondary/40 transition-all duration-300"
+                    whileHover={{ y: -4, borderColor: 'hsl(270 35% 60% / 0.4)' }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+                    className="p-5 rounded-xl border border-border bg-card cursor-pointer shadow-sm hover:shadow-md transition-shadow"
                   >
-                    <div className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-secondary mt-2.5 group-hover:scale-150 transition-transform" />
-                      <div>
-                        <h4 className="font-semibold mb-2 text-foreground group-hover:text-secondary transition-colors">{s.title}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                      </div>
-                    </div>
+                    <h4 className="font-semibold mb-2 text-foreground">{s.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                   </motion.div>
                 ))}
               </div>
