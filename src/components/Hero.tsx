@@ -25,7 +25,7 @@ const Hero = () => {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
+          transition={{ duration: 2 }}
           className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-4"
         >
           ADMINSOURCE
@@ -33,7 +33,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.3 }}
+          transition={{ duration: 2, delay: 0.5 }}
           className="text-lg md:text-xl text-white/70 font-light mb-10"
         >
           {t('subtitle')}
@@ -41,7 +41,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
+          transition={{ duration: 2, delay: 1 }}
           className="flex gap-4 justify-center flex-wrap"
         >
           <motion.button
