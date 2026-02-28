@@ -64,9 +64,9 @@ const Services = () => {
               viewport={{ once: true }}
               transition={{ delay: ci * 0.1 }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <cat.icon className="w-5 h-5 text-primary" />
+                <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-secondary/15 flex items-center justify-center">
+                  <cat.icon className="w-5 h-5 text-secondary" />
                 </div>
                 <h3 className="text-xl font-semibold">{cat.title}</h3>
               </div>
@@ -74,7 +74,7 @@ const Services = () => {
                 {cat.services.map((s, si) => (
                   <div
                     key={si}
-                    className="p-5 rounded-xl border border-border bg-card hover:shadow-md transition-shadow"
+                    className="p-5 rounded-xl border border-border bg-card hover:shadow-md hover:border-secondary/40 transition-all"
                   >
                     <h4 className="font-semibold mb-2 text-foreground">{s.title}</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
