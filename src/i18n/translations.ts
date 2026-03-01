@@ -37,7 +37,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     contact_title: 'Kontakt',
     contact_email: 'Email',
-    contact_phone: 'Telefón',
+    contact_phone_sk: 'Slovenský kontakt',
+    contact_phone_int: 'Medzinárodný kontakt',
     contact_message: 'Napíšte nám',
     contact_name: 'Meno',
     contact_your_email: 'Váš email',
@@ -80,7 +81,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     contact_title: 'Contact',
     contact_email: 'Email',
-    contact_phone: 'Phone',
+    contact_phone_sk: 'Slovak Contact',
+    contact_phone_int: 'International Contact',
     contact_message: 'Write to us',
     contact_name: 'Name',
     contact_your_email: 'Your email',
@@ -123,7 +125,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     contact_title: 'Kontakt',
     contact_email: 'E-Mail',
-    contact_phone: 'Telefon',
+    contact_phone_sk: 'Slowakischer Kontakt',
+    contact_phone_int: 'Internationaler Kontakt',
     contact_message: 'Schreiben Sie uns',
     contact_name: 'Name',
     contact_your_email: 'Ihre E-Mail',
@@ -166,7 +169,8 @@ export const translations: Record<Language, Record<string, string>> = {
 
     contact_title: 'Контакты',
     contact_email: 'Эл. почта',
-    contact_phone: 'Телефон',
+    contact_phone_sk: 'Словацкий контакт',
+    contact_phone_int: 'Международный контакт',
     contact_message: 'Напишите нам',
     contact_name: 'Имя',
     contact_your_email: 'Ваш email',
