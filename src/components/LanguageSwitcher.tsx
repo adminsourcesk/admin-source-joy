@@ -29,8 +29,7 @@ const LanguageSwitcher = () => {
         onClick={() => setOpen(!open)}
         className="flex items-center gap-1.5 px-2 py-1 rounded text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
       >
-        <Globe className="w-4 h-4" />
-        {flags[language]} {language.toUpperCase()}
+        {flags[language]}
       </button>
       {open && (
         <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-lg shadow-lg py-1 min-w-[120px] z-50">
