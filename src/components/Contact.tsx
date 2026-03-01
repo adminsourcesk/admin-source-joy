@@ -20,7 +20,7 @@ const Contact = () => {
 
         <div className="flex flex-col items-center gap-8">
           <motion.a
-            href="mailto:info@adminsource.sk"
+            href="mailto:office@adminsource.sk"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -30,20 +30,33 @@ const Contact = () => {
           >
             <Mail className="w-8 h-8 text-primary" />
             <p className="text-sm text-muted-foreground">{t('contact_email')}</p>
-            <p className="text-xl font-semibold">info@adminsource.sk</p>
+            <p className="text-xl font-semibold">office@adminsource.sk</p>
           </motion.a>
           <motion.a
-            href="tel:+421XXXXXXXX"
+            href="tel:+421902469436"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.8, delay: 0.3 }}
+            transition={{ duration: 1.8, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
             className="flex flex-col items-center text-center gap-1"
           >
             <Phone className="w-8 h-8 text-primary" />
             <p className="text-sm text-muted-foreground">{t('contact_phone')}</p>
-            <p className="text-xl font-semibold">+421 XXX XXX XXX</p>
+            <p className="text-xl font-semibold">+421 902 469 436</p>
+          </motion.a>
+          <motion.a
+            href="tel:+421917930550"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.8, delay: 0.4 }}
+            whileHover={{ scale: 1.05 }}
+            className="flex flex-col items-center text-center gap-1"
+          >
+            <Phone className="w-8 h-8 text-primary" />
+            <p className="text-sm text-muted-foreground">{t('contact_phone')}</p>
+            <p className="text-xl font-semibold">+421 917 930 550</p>
           </motion.a>
         </div>
       </div>
