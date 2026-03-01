@@ -42,7 +42,7 @@ const Contact = () => {
             className="flex flex-col items-center text-center gap-1"
           >
             <Phone className="w-8 h-8 text-primary" />
-            <p className="text-sm text-muted-foreground">{t('contact_phone')}</p>
+            <p className="text-sm text-muted-foreground">{t('contact_phone_sk')}</p>
             <p className="text-xl font-semibold">+421 902 469 436</p>
           </motion.a>
           <motion.a
@@ -55,7 +55,7 @@ const Contact = () => {
             className="flex flex-col items-center text-center gap-1"
           >
             <Phone className="w-8 h-8 text-primary" />
-            <p className="text-sm text-muted-foreground">{t('contact_phone')}</p>
+            <p className="text-sm text-muted-foreground">{t('contact_phone_int')}</p>
             <p className="text-xl font-semibold">+421 917 930 550</p>
           </motion.a>
         </div>
