@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="py-8 px-6 border-t border-border bg-background">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
         <span className="font-semibold text-foreground">ADMINSOURCE</span>
-        <span>© {new Date().getFullYear()} AdminSource. {t('footer_rights')}</span>
+        <span>© {new Date().getFullYear()} ADMINSOURCE. {t('footer_rights').toUpperCase()}</span>
       </div>
     </footer>
   );
